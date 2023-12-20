@@ -20,4 +20,5 @@ Client
 
 Resources
 ---------
+* [Zio-Http Github](https://github.com/zio/zio-http)
 * [Zio-Http Getting Started]https://zio.dev/zio-http/getting-started/)
