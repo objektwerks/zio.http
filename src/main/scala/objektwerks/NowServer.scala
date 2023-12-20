@@ -12,4 +12,4 @@ object NowServer extends ZIOAppDefault:
 
   override val run = Server
     .serve(routes)
-    .provide(Server.default)
+    .provide(Server.defaultWithPort(7070))
