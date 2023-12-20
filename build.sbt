@@ -6,7 +6,7 @@ libraryDependencies ++= {
   Seq(
     "dev.zio" %% "zio-http" % "3.0.0-RC4",
     "ch.qos.logback" % "logback-classic" % "1.4.14",
-    "org.scalatest" %% "scalatest" % "3.2.17" % Test
+    "dev.zio" %% "zio-test" % "2.0.20" % Test
   )
 }
 scalacOptions ++= Seq(
