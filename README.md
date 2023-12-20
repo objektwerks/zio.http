@@ -16,4 +16,4 @@ Run
 
 Resources
 ---------
-* [Kyo Github](https://github.com/getkyo/kyo#)
+* [Zio-Http Getting Started]https://zio.dev/zio-http/getting-started/)
