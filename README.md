@@ -16,7 +16,7 @@ Server
 
 Client
 ------
-1. curl -v http://localhost:7070/now
+1. curl -v http://localhost:8080/now
 
 Resources
 ---------
