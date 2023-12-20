@@ -8,6 +8,7 @@ Build
 
 Test
 ----
+>NowServerTest is correct; yet still fails!
 1. sbt clean test
 
 Server
