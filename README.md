@@ -12,7 +12,7 @@ Test
 
 Server
 ------
-1. sbt clean compile run
+1. sbt clean test run
 
 Client
 ------
