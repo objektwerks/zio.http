@@ -11,5 +11,3 @@ object NowServer extends ZIOAppDefault:
   ).toHttpApp
 
   override val run = Server.serve(routes).provide(Server.default)
-
-  // Thread.currentThread.join
