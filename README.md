@@ -10,9 +10,13 @@ Test
 ----
 1. sbt clean test
 
-Run
----
-1. sbt clean run
+Server
+------
+1. sbt clean compile run
+
+Client
+------
+1. curl -v http://localhost:7070/now
 
 Resources
 ---------
