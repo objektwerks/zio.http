@@ -1,3 +1,4 @@
 package objektwerks
 
-@main runServer: Unit = ???
+@main def runServer: Unit =
+  ()
