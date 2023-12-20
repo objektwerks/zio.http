@@ -1,6 +1,6 @@
-Kyo
----
->Kyo feature tests using Scala 3.
+Zio-Http
+--------
+>Zio-Http feature tests using Scala 3.
 
 Build
 -----
@@ -13,16 +13,6 @@ Test
 Run
 ---
 1. sbt clean run
-```
-Multiple main classes detected. Select one to run:
- [1] objektwerks.ChannelApp
- [2] objektwerks.ConsoleApp
- [3] objektwerks.FiberApp
- [4] objektwerks.QueueApp
- [5] objektwerks.RandomApp
-
-Enter number:
-```
 
 Resources
 ---------
