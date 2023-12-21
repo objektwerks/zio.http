@@ -12,6 +12,7 @@ object CommandServer extends ZIOAppDefault:
 
   val routes = Routes(
     Method.POST / "command" -> handler
+      // Error: Found: objektwerks.Command Required: zio.ZIO[Nothing, Any, Any]
       .contramap[Request](request => request.body.asString.flatMap { json => json.fromJson[Command].getOrElse(Command("error")) } )
       .map(event => Response.json(event.toJson))
   ).toHttpApp
