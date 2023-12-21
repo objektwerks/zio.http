@@ -4,6 +4,7 @@ import zio.*
 import zio.http.*
 import zio.json.*
 
+import Command.given
 import Event.given
 
 object CommandServer extends ZIOAppDefault:
