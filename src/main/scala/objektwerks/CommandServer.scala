@@ -13,9 +13,10 @@ object CommandServer extends ZIOAppDefault:
       (
         for
           json    <- request.body.asString
-          command <- json.fromJson[Command]
-          event    = Event(name = command.name)
-        yield Response.json(event.toJson)
+          command <- ZIO.succeed( json.fromJson[Command] )
+        yield
+          val event = Event(name = command.name)
+          Response.json(event.toJson)
       ).recover {
         case NonFatal(error) => s"{error: ${error.getMessage}}"
       }
