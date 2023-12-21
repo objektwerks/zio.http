@@ -6,6 +6,8 @@ Warning
 -------
 >[2023.12.21] **CommandServer** request-to-Command error: ```Found: objektwerks.Command Required: zio.ZIO[Nothing, Any, Any]```
 
+>Using any ZIO.* constructor method results in the opposite error: objektwerks.Command required
+
 Build
 -----
 1. sbt clean compile
