@@ -5,7 +5,6 @@ import zio.http.*
 import zio.json.*
 
 import Event.given
-import scala.util.control.NonFatal
 
 object CommandServer extends ZIOAppDefault:
   val routes = Routes(
