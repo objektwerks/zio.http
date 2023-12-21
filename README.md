@@ -13,6 +13,13 @@ Test
 Server
 ------
 1. sbt clean test run
+```
+Multiple main classes detected. Select one to run:
+ [1] objektwerks.CommandServer
+ [2] objektwerks.NowServer
+
+Enter number:
+```
 
 Client
 ------
