@@ -4,6 +4,8 @@ import zio.*
 import zio.http.*
 import zio.json.*
 
+import Event.given
+
 object CommandServer extends ZIOAppDefault:
   val routes = Routes(
     Method.POST / "command" -> handler { (request: Request) =>
