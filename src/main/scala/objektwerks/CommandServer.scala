@@ -12,7 +12,7 @@ object CommandServer extends ZIOAppDefault:
   val routes = Routes(
     Method.POST / "command" -> handler
       .contramap[Request](request => Command(request.path.encode))
-      .map(event => Response.json(event.toJson) )
+      .map(event => Response.json(event.toJson))
   ).toHttpApp
 
   override val run = Server
