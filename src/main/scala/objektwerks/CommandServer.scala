@@ -10,4 +10,4 @@ object CommandServer extends ZIOAppDefault:
 
   override val run = Server
     .serve(routes)
-    .provide(Server.defaultWithPort(7070))
+    .provide(Server.defaultWithPort(6060))
