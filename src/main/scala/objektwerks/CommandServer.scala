@@ -4,6 +4,7 @@ import zio.*
 import zio.http.*
 import zio.json.*
 
+import Command.given
 import Event.given
 
 object CommandServer extends ZIOAppDefault:
@@ -11,7 +12,7 @@ object CommandServer extends ZIOAppDefault:
 
   val routes = Routes(
     Method.POST / "command" -> handler
-      .contramap[Request](request => Command(request.path.encode))
+      .contramap[Request](request => request.body.asString.flatMap { json => json.fromJson[Command] } )
       .map(event => Response.json(event.toJson))
   ).toHttpApp
 
