@@ -13,18 +13,9 @@ object CommandServer extends ZIOAppDefault:
     .map(event => Response.json(event.toJson))
     
   val routes = Routes(
-    Method.POST / "command" -> handler { (request: Request) =>
-      (
-        for
-          json    <- request.body.asString
-          command <- ZIO.succeed( json.fromJson[Command] )
-        yield
-          val event = Event(name = command.name)
-          Response.json(event.toJson)
-      ).recover {
-        case NonFatal(error) => s"{error: ${error.getMessage}}"
-      }
-    }
+    Method.POST / "command" -> Handler
+      .fromFunction[Command] { case Command(name) => Event(name) }
+      .map(event => Response.json(event.toJson))
   ).toHttpApp
 
   override val run = Server
