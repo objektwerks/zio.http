@@ -2,6 +2,10 @@ Zio-Http
 --------
 >Zio-Http feature tests using Scala 3.
 
+Warning
+-------
+>[2023.12.21] **CommandServer** request-to-Command error: ```Found: objektwerks.Command Required: zio.ZIO[Nothing, Any, Any]```
+
 Build
 -----
 1. sbt clean compile
