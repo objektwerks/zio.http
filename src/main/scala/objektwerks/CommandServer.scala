@@ -10,9 +10,9 @@ object CommandServer extends ZIOAppDefault:
   val routes = Routes(
     Method.POST / "command" -> handler { (request: Request) =>
       for
-        json <- request.body.asString
+        json    <- request.body.asString
         command <- json.fromJson[Command]
-        event = Event(name = command.name)
+        event    = Event(name = command.name)
       yield Response.json(event.toJson)
     }
   ).toHttpApp
