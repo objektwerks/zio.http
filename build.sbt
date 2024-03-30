@@ -1,7 +1,7 @@
 name := "zio.http"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "3.4.1-RC2"
+scalaVersion := "3.4.1"
 libraryDependencies ++= {
   val zioVersion = "2.0.21"
   Seq(
