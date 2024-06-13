@@ -1,6 +1,6 @@
 Zio-Http
 --------
->Zio-Http feature tests using Scala 3.
+>Zio-Http feature tests using Zio-Json and Scala 3.
 
 Warning
 -------
