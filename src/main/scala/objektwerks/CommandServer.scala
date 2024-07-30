@@ -15,8 +15,8 @@ object CommandServer extends ZIOAppDefault:
         command <- ZIO.fromEither( body.fromJson[Command] )
         event   = Event( command.name ).toJson
       yield Response.json(event)
-  ).handleError(_ match
-    case _: String => Response.badRequest("Invalid json.")
+  ).handleError( _ match
+    case _: String => Response.json( Event("Invalid json.").toJson )
   )
 
   val app = routes.toHttpApp
