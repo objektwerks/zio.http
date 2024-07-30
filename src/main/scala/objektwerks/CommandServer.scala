@@ -16,6 +16,8 @@ object CommandServer extends ZIOAppDefault:
         event   = Event( command.name )
       } yield Response.json( event.toJson[Event] )
     }
+  ).handleError(_ match
+    case _: String => Response.badRequest("Wrong JSON payload")
   ).toHttpApp()
 
   def run = Server
