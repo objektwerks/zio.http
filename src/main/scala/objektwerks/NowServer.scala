@@ -10,6 +10,6 @@ object NowServer extends ZIOAppDefault:
     Method.GET / "now" -> handler( Response.text( s"*** Now: ${Instant.now.toString}" ) )
   ).toHttpApp
 
-  override val run = Server
+  def run = Server
     .serve(routes)
     .provide(Server.defaultWithPort(7070))
