@@ -8,7 +8,7 @@ object NowServerTest extends ZIOSpecDefault:
     test("now server should return ok") {
       val request = Request.get("http://localhost:7070/now")
       for
-        response <- NowServer.app.runZIO(request)
+        response <- NowServer.routes.runZIO(request)
       yield assertTrue( response.status == Status.Ok )
     }
   )
