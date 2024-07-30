@@ -8,7 +8,7 @@ object CommandServerTest extends ZIOSpecDefault:
     test("command server should return ok") {
       val request = Request.get("http://localhost:6060/command")
       for
-        response <- CommandServer.app.runZIO(request)
+        response <- CommandServer.routes.runZIO(request)
       yield assertTrue( response.status == Status.Ok )
     }
   )
