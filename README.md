@@ -4,9 +4,8 @@ Zio-Http
 
 Warning
 -------
->[2023.12.21] **CommandServer** request-to-Command error: ```Found: objektwerks.Command Required: zio.ZIO[Nothing, Any, Any]```
-
->Using any ZIO.* constructor method results in the opposite error: objektwerks.Command required
+>ZIO Http is the ideal poster child for whay Scala is dying --- massively over-engineered,
+>confusing both compiler and developer. :)
 
 Build
 -----
