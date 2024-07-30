@@ -12,8 +12,6 @@ object NowServer extends ZIOAppDefault:
     }
   )
 
-  val app = routes.toHttpApp
-
   def run = Server
-    .serve(app)
+    .serve(routes)
     .provide(Server.defaultWithPort(7070))
