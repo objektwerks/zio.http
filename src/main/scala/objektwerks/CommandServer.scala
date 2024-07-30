@@ -19,8 +19,6 @@ object CommandServer extends ZIOAppDefault:
     case error: String => Response.json( Event(s"Invalid json: $error").toJson )
   )
 
-  val app = routes.toHttpApp
-
   def run = Server
-    .serve(app)
+    .serve(routes)
     .provide(Server.defaultWithPort(6060))
