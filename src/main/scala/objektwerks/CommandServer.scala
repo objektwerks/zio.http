@@ -21,5 +21,5 @@ object CommandServer extends ZIOAppDefault:
   )
 
   def run = Server
-    .serve(routes.toHttpApp())
+    .serve(routes.toHttpApp)
     .provide(Server.defaultWithPort(6060))
