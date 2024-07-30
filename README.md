@@ -6,7 +6,7 @@ Warning
 -------
 >ZIO Http is the ideal *poster child* for why Scala is dying --- a massively over-engineered
 >library, confusing both compiler and developer. :) Think of trying to change a tire on a moving
->car; and you'll have grasped the insanity of the ZIO ecosystem. :)
+>car; and you'll have grasped the insanity of the ZIO ecosystem. :) Strong comment to follow!
 
 Build
 -----
