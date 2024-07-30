@@ -13,13 +13,13 @@ object CommandServer extends ZIOAppDefault:
       for {
         body    <- request.body.asString.orDie
         command <- ZIO.fromEither( body.fromJson[Command] )
-        event   = Event( command.name )
-      } yield Response.json( event.toJson[Event] )
+        event   = Event( command.name ).toJson
+      } yield Response.json(event)
     }
   ).handleError(_ match
     case _: String => Response.badRequest("Invalid json.")
-  ).toHttpApp()
+  )
 
   def run = Server
-    .serve(routes)
+    .serve(routes.toHttpApp())
     .provide(Server.defaultWithPort(6060))
