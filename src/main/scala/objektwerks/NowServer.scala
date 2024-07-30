@@ -10,8 +10,8 @@ object NowServer extends ZIOAppDefault:
     Method.GET / "now" -> handler { (_: Request) =>
       Response.text( s"*** Now: ${Instant.now.toString}" )
     }
-  ).toHttpApp
+  )
 
   def run = Server
-    .serve(routes)
+    .serve(routes.toHttpApp)
     .provide(Server.defaultWithPort(7070))
