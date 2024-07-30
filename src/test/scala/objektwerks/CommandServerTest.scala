@@ -9,7 +9,7 @@ import Command.given
 import Event.given
 
 object CommandServerTest extends ZIOSpecDefault:
-  def spec = suite("http")(
+  def spec = suite("command")(
     test("command server should return ok") {
       val command = Command("test")
       val request = Request.post("http://localhost:6060/command", Body.fromString( command.toJson ) )
