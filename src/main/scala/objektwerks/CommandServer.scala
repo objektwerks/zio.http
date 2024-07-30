@@ -20,6 +20,8 @@ object CommandServer extends ZIOAppDefault:
     case _: String => Response.badRequest("Invalid json.")
   )
 
+  val app = routes.toHttpApp
+
   def run = Server
-    .serve(routes.toHttpApp)
+    .serve(app)
     .provide(Server.defaultWithPort(6060))
