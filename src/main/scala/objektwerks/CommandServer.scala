@@ -8,15 +8,15 @@ import Command.given
 import Event.given
 
 object CommandServer extends ZIOAppDefault:
-  val commandHandler = Handler.fromFunction[Command] { case Command(name) => Event(name) }
-
   val routes = Routes(
-    Method.POST / "command" -> commandHandler
-      // Error: Found: objektwerks.Command Required: zio.ZIO[Nothing, Any, Any]
-      // Using any ZIO.* constructor method results in the opposite error: objektwerks.Command required
-      .contramap[Request](request => request.body.asString.flatMap { json => json.fromJson[Command] } )
-      .map(event => Response.json(event.toJson))
-  ).toHttpApp
+    Method.POST / "command" -> handler { (request: Request) =>
+      for {
+        body    <- request.body.asString.orDie
+        command <- ZIO.fromEither( body.fromJson[Command] )
+        event   = Event( command.name )
+      } yield Response.json( event.toJson[Event] )
+    }
+  ).toHttpApp()
 
   def run = Server
     .serve(routes)
