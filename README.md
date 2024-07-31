@@ -1,6 +1,6 @@
-Zio-Http
+ZIO-HTTP
 --------
->Zio-Http feature tests using Zio-Json and Scala 3.
+>ZIO-HTTP feature tests using ZIO-Json and Scala 3.
 
 Build
 -----
@@ -27,5 +27,5 @@ Client
 
 Resources
 ---------
-* [Zio-Http Github](https://github.com/zio/zio-http)
-* [Zio-Http Getting Started](https://zio.dev/zio-http/getting-started/)
+* [ZIO-HTTP Github](https://github.com/zio/zio-http)
+* [ZIO-HTTP Getting Started](https://zio.dev/zio-http/getting-started/)
