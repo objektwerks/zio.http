@@ -8,7 +8,7 @@ import Command.given
 import Event.given
 
 object CommandServer extends ZIOAppDefault:
-  val routes = Routes(
+  val routes: Routes[Any, Response] = Routes(
     Method.POST / "command" -> handler: (request: Request) =>
       for
         body    <- request.body.asString.orDie
