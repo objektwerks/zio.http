@@ -7,7 +7,7 @@ libraryDependencies ++= {
   Seq(
     "dev.zio" %% "zio-http" % "3.7.4",
     "dev.zio" %% "zio-json" % "0.8.0",
-    "ch.qos.logback" % "logback-classic" % "1.5.22",
+    "ch.qos.logback" % "logback-classic" % "1.5.23",
     "dev.zio" %% "zio-test" % zioVersion % Test,
     "dev.zio" %% "zio-test-sbt" % zioVersion % Test
 
